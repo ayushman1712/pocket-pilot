@@ -58,11 +58,23 @@ class MainActivity : AppCompatActivity() {
 
         // Next Stop button listener
         nextStopButton.setOnClickListener {
+//            if (currentStopIndex < stops.size) {
+//                stops[currentStopIndex].reached = true
+//                updateProgressBar()
+//                updateDistances()
+//                updateCards()
+//                currentStopIndex++
+//            }
             if (currentStopIndex < stops.size) {
-                stops[currentStopIndex].reached = true
+                val currentStop = stops[currentStopIndex]
+                currentStop.reached = true
+                currentStop.remainingDistance = 0.0
+                currentStop.remainingTime = 0.0
+
                 updateProgressBar()
                 updateDistances()
                 updateCards()
+
                 currentStopIndex++
             }
         }
@@ -100,19 +112,38 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateDistances() {
-        val totalCovered = stops.filter { it.reached }.sumOf { it.remainingDistance }
+        val totalCovered = stops.filter { it.reached }.sumOf { it.originalDistance }
         val totalRemaining = stops.filter { !it.reached }.sumOf { it.remainingDistance }
 
         totalDistanceCovered.text = "Total Distance Covered: ${formatDistance(totalCovered)}"
         totalDistanceRemaining.text = "Total Distance Remaining: ${formatDistance(totalRemaining)}"
     }
 
+//    private fun updateCards() {
+//        for (i in 0 until cardContainer.childCount) {
+//            val cardView = cardContainer.getChildAt(i) as CardView
+//            val remainingDistanceView: TextView = cardView.findViewById(R.id.remainingDistance)
+//            val stop = stops[i]
+//            remainingDistanceView.text = "Remaining Distance: ${formatDistance(stop.remainingDistance)}"
+//        }
+//    }
+
     private fun updateCards() {
         for (i in 0 until cardContainer.childCount) {
             val cardView = cardContainer.getChildAt(i) as CardView
             val remainingDistanceView: TextView = cardView.findViewById(R.id.remainingDistance)
+            val remainingTimeView: TextView = cardView.findViewById(R.id.remainingTime)
+            val reachedView: TextView = cardView.findViewById(R.id.reached)
+
             val stop = stops[i]
+
             remainingDistanceView.text = "Remaining Distance: ${formatDistance(stop.remainingDistance)}"
+            remainingTimeView.text = "Remaining Time: ${stop.remainingTime} hours"
+            reachedView.text = "Reached: ${if (stop.reached) "Yes" else "No"}"
+
+            if (stop.reached) {
+                cardView.setCardBackgroundColor(Color.GREEN)
+            }
         }
     }
 
@@ -130,6 +161,7 @@ data class Stop(
     val name: String,
     var reached: Boolean,
     val visaRequirements: String,
-    val remainingDistance: Double,
-    val remainingTime: Double
+    var remainingDistance: Double,
+    var remainingTime: Double,
+    val originalDistance: Double = remainingDistance // Store the original distance
 )

@@ -65,14 +65,15 @@
     <!-- Bottom Info Box -->
     <LinearLayout
         android:id="@+id/bottomInfoBox"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/bottom_box_background"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="@drawable/bottom_box_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -81,6 +82,7 @@
             android:id="@+id/totalDistanceCovered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Total Distance Covered: 0 km"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -89,23 +91,24 @@
             android:id="@+id/totalDistanceRemaining"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="Total Distance Remaining: 0 km"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp" />
+            android:textStyle="bold" />
 
         <ToggleButton
             android:id="@+id/unitToggleButton"
-            android:layout_width="wrap_content"
+            android:layout_width="191dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:textOff="Switch to Miles"
-            android:textOn="Switch to KM"
-            android:checked="true" />
+            android:checked="true"
+            android:textOn="Switch to Miles"
+            android:textOff="Switch to KM" />
 
         <Button
             android:id="@+id/nextStopButton"
-            android:layout_width="wrap_content"
+            android:layout_width="333dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Next Stop"
