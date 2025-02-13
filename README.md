@@ -1,49 +1,36 @@
-# Pocket Pilot (XML Version)
+# Pocket Pilot
 
 ## Overview
-This Android application tracks a flight journey with multiple stops, displaying stop details, visa requirements, and progress. The app includes a toggle button for unit conversion (km/miles) and updates progress dynamically as stops are reached. 
+
+Pocket Pilot is an Android application that tracks a flight journey with multiple stops, displaying stop details, visa requirements, and journey progress. The app allows users to toggle between distance units (km/miles) and dynamically updates progress as stops are reached.
+
+## Versions
+
+This project has **two versions**, implemented in separate branches of this repository:
+
+1. **XML Version** (Traditional UI with RecyclerView)
+2. **Jetpack Compose Version** (Modern UI with LazyColumn)
+
+Each version follows the same functionality but is built using different UI frameworks.
 
 ## Features
-- **Scrollable list of stops** using RecyclerView, each displayed as a CardView.
-- **Progress bar** that updates as stops are reached.
+
+- **List of stops**: Displays stop details, visa requirements, remaining distance, and time.
+- **Progress bar**: Updates dynamically as stops are marked as "Reached."
 - **Color-coded stops**: Green for reached, red for pending.
 - **Distance unit toggle**: Switch between kilometers and miles.
-- **Bottom section** showing total distance covered.
+- **Bottom section**: Displays total distance covered.
 
-## Project Structure
-```plaintext
-FlightJourneyTracker/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/com/example/flightjourney/
-│   │   │   │   ├── MainActivity.kt
-│   │   │   ├── res/
-│   │   │   │   ├── layout/
-│   │   │   │   │   ├── activity_main.xml
-│   │   │   │   │   ├── card_stop.xml (CardView for each stop)
-│   │   │   │   ├── drawable/
-│   │   │   │   │   ├── bottom_box_background.xml
+## How to Access the Versions
+
+- The **XML version** is available in the `xml-version` branch.
+- The **Jetpack Compose version** is available in the `compose-version` branch.
+
+To switch between versions, use:
+```sh
+git checkout xml-version
 ```
-
-## Implementation Details
-1. **MainActivity.xml**
-   - Displays the progress bar, RecyclerView, and bottom section.
-   - Uses ConstraintLayout for structured UI design.
-
-2. **RecyclerView (StopAdapter.kt)**
-   - Dynamically populates a list of stops from a predefined dataset.
-   - Updates the progress bar as stops are marked "Reached".
-
-3. **CardView (item_stop.xml)**
-   - Each stop has a name, visa requirements, remaining distance, and time.
-   - Changes color based on whether the stop is reached.
-
-4. **Unit Toggle Button**
-   - Converts total distance between kilometers and miles dynamically.
-
-## How to Run
-1. Clone the repository.
-2. Open the project in Android Studio.
-3. Sync Gradle and build the project.
-4. Run the app on an emulator or physical device.
+or 
+```sh
+git checkout compose-version
+```
