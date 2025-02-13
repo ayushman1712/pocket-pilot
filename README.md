@@ -31,15 +31,11 @@ FlightJourneyTracker/
    - Displays the progress bar, RecyclerView, and bottom section.
    - Uses ConstraintLayout for structured UI design.
 
-2. **RecyclerView (StopAdapter.kt)**
-   - Dynamically populates a list of stops from a predefined dataset.
-   - Updates the progress bar as stops are marked "Reached".
-
-3. **CardView (item_stop.xml)**
+2. **CardView (card_stop.xml)**
    - Each stop has a name, visa requirements, remaining distance, and time.
    - Changes color based on whether the stop is reached.
 
-4. **Unit Toggle Button**
+3. **Unit Toggle Button**
    - Converts total distance between kilometers and miles dynamically.
 
 ## How to Run
