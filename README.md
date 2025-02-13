@@ -11,18 +11,17 @@ This Android application tracks a flight journey with multiple stops, displaying
 - **Bottom section** showing total distance covered.
 
 ## Project Structure
-FlightJourneyTracker/ 
+
+FlightJourneyTracker/
 ├── app/
-│ ├── src/ 
-│ │ ├── main/ 
-│ │ │ ├── java/com/example/flightjourney/ 
-│ │ │ │ ├── MainActivity.kt 
-│ │ │ ├── res/ 
-│ │ │ │ ├── layout/ 
-│ │ │ │ │ ├── activity_main.xml 
-│ │ │ │ │ ├── card_stop.xml (CardView for each stop)
-│ │ │ │ ├── drawable/ 
-│ │ │ │ │ ├── bottom_box_background.xml 
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/flightjourney/
+│   │   │   │   ├── MainActivity.kt
+│   │   │   ├── res/
+│   │   │   │   ├── layout/
+│   │   │   │   │   ├── activity_main.xml
+│   │   │   │   │   ├── acrd_stop.xml (CardView for each stop)
 
 ## Implementation Details
 1. **MainActivity.xml**
