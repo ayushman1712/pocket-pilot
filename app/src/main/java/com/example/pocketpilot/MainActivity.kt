@@ -34,9 +34,11 @@ class MainActivity : AppCompatActivity() {
         // Example data for stops
         stops.addAll(
             listOf(
-                Stop("Stop 1", false, "Visa not required", 100.0, 2.0),
-                Stop("Stop 2", false, "Visa required", 200.0, 4.0),
-                Stop("Stop 3", false, "Visa not required", 300.0, 6.0)
+                Stop("Mumbai", false, "Visa not required", 100.0, 1.0),
+                Stop("Jaipur", false, "Visa not required", 200.0, 1.5),
+                Stop("Delhi", false, "Visa not required", 200.0, 2.0),
+                Stop("London", false, "Visa required", 1500.0, 12.0),
+                Stop("Paris", false, "Visa required", 150.0, 2.0)
             )
         )
 
