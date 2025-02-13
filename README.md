@@ -12,7 +12,7 @@ This Android application tracks a flight journey with multiple stops, displaying
 
 ## Project Structure
 FlightJourneyTracker/ 
-├── app/ 
+├── app/
 │ ├── src/ 
 │ │ ├── main/ 
 │ │ │ ├── java/com/example/flightjourney/ 
