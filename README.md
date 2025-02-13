@@ -11,7 +11,7 @@ This Android application tracks a flight journey with multiple stops, displaying
 - **Bottom section** showing total distance covered.
 
 ## Project Structure
-
+```plaintext
 FlightJourneyTracker/
 ├── app/
 │   ├── src/
@@ -21,7 +21,10 @@ FlightJourneyTracker/
 │   │   │   ├── res/
 │   │   │   │   ├── layout/
 │   │   │   │   │   ├── activity_main.xml
-│   │   │   │   │   ├── acrd_stop.xml (CardView for each stop)
+│   │   │   │   │   ├── card_stop.xml (CardView for each stop)
+│   │   │   │   ├── drawable/
+│   │   │   │   │   ├── bottom_box_background.xml
+```
 
 ## Implementation Details
 1. **MainActivity.xml**
