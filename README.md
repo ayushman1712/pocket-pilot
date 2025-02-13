@@ -4,6 +4,8 @@
 
 Pocket Pilot is an Android application that tracks a flight journey with multiple stops, displaying stop details, visa requirements, and journey progress. The app allows users to toggle between distance units (km/miles) and dynamically updates progress as stops are reached.
 
+[Watch Demo](videos/demo.mp4)
+
 ## Versions
 
 This project has **two versions**, implemented in separate branches of this repository:
